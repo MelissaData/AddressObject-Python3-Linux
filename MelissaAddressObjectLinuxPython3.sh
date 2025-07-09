@@ -83,7 +83,7 @@ done
 
 ######################### Config ###########################
 
-RELEASE_VERSION='2025.06'
+RELEASE_VERSION='2025.07'
 ProductName="DQ_ADDR_DATA"
 
 # Uses the location of the .sh file 
