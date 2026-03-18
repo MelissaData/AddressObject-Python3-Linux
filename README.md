@@ -6,7 +6,7 @@ This code showcases the Melissa Address Object using Python3.
 
 Please feel free to copy or embed this code to your own project. Happy coding!
 
-For the latest Melissa Address Object release notes, please visit: https://releasenotes.melissa.com/on-premise-api/address-object/
+To view the latest Melissa Address Object release notes or to subscribe to product notifications, please visit: https://releasenotes.melissa.com/on-premise-api/address-object/
 
 For further details, please visit: https://docs.melissa.com/on-premise-api/address-object/address-object-quickstart.html
 
@@ -44,10 +44,17 @@ This is the c++ code of the Melissa Object.
 - dph256.dte
 - dph256.hsa
 - dph256.hsc
+- dph256.hsd
 - dph256.hsf
 - dph256.hsn
+- dph256.hsp
+- dph256.hsr
+- dph256.hst
+- dph256.hsu
 - dph256.hsv
 - dph256.hsx
+- dph256.hsy
+- dph256.hsz
 - ews.txt
 - lcd256
 - mdAddr.dat
@@ -86,8 +93,8 @@ If you see the version number then you have installed Python3 and set up your en
 
 #### Download this project
 ```
-git clone https://github.com/MelissaData/AddressObject-Python3-Linux
-cd AddressObject-Python3-Linux
+git clone https://git.melissadata.com/dtgroup/melissadataobjectexamples/python3/melissadataaddressobjectlinuxpython3sample
+cd MelissaAddressObjectLinuxPython3
 ```
 
 #### Set up Melissa Updater 
