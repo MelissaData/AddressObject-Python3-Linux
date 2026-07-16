@@ -93,8 +93,8 @@ If you see the version number then you have installed Python3 and set up your en
 
 #### Download this project
 ```
-git clone https://git.melissadata.com/dtgroup/melissadataobjectexamples/python3/melissadataaddressobjectlinuxpython3sample
-cd MelissaAddressObjectLinuxPython3
+git clone https://github.com/MelissaData/AddressObject-Python3-Linux
+cd AddressObject-Python3-Linux
 ```
 
 #### Set up Melissa Updater 
