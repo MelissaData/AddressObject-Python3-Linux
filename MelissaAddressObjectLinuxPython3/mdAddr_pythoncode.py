@@ -577,7 +577,6 @@ lib.mdZipGetAutomation.restype = c_char_p
 lib.mdZipGetFinanceNumber.argtypes = [c_void_p]
 lib.mdZipGetFinanceNumber.restype = c_char_p
 
-# mdAddr Enumerations
 class ProgramStatus(Enum):
 	ErrorNone = 0
 	ErrorOther = 1
@@ -586,10 +585,6 @@ class ProgramStatus(Enum):
 	ErrorFoundOldFile = 4
 	ErrorDatabaseExpired = 5
 	ErrorLicenseExpired = 6
-
-class AccessType(Enum):
-	Local = 0
-	Remote = 1
 
 class DiacriticsMode(Enum):
 	Auto = 0
@@ -609,20 +604,15 @@ class AliasPreserveMode(Enum):
 	ConvertAlias = 0
 	PreserveAlias = 1
 
+class ResultCdDescOpt(Enum):
+	ResultCodeDescriptionLong = 0
+	ResultCodeDescriptionShort = 1
+
 class AutoCompletionMode(Enum):
 	AutoCompleteSingleSuite = 0
 	AutoCompleteRangedSuite = 1
 	AutoCompletePlaceHolderSuite = 2
 	AutoCompleteNoSuite = 3
-
-class ResultCdDescOpt(Enum):
-	ResultCodeDescriptionLong = 0
-	ResultCodeDescriptionShort = 1
-
-class MailboxLookupMode(Enum):
-	MailboxNone = 0
-	MailboxExpress = 1
-	MailboxPremium = 2
 
 class mdAddr(object):
 	def __init__(self):
@@ -1159,52 +1149,6 @@ class mdAddr(object):
 	def GetReserved(self, p1):
 		return lib.mdAddrGetReserved(self.I, (p1 or '').encode('utf-8')).decode('utf-8')
 
-# mdParse Enumerations
-class ProgramStatus(Enum):
-	ErrorNone = 0
-	ErrorOther = 1
-	ErrorOutOfMemory = 2
-	ErrorRequiredFileNotFound = 3
-	ErrorFoundOldFile = 4
-	ErrorDatabaseExpired = 5
-	ErrorLicenseExpired = 6
-
-class AccessType(Enum):
-	Local = 0
-	Remote = 1
-
-class DiacriticsMode(Enum):
-	Auto = 0
-	On = 1
-	Off = 2
-
-class StandardizeMode(Enum):
-	ShortFormat = 0
-	LongFormat = 1
-	AutoFormat = 2
-
-class SuiteParseMode(Enum):
-	ParseSuite = 0
-	CombineSuite = 1
-
-class AliasPreserveMode(Enum):
-	ConvertAlias = 0
-	PreserveAlias = 1
-
-class AutoCompletionMode(Enum):
-	AutoCompleteSingleSuite = 0
-	AutoCompleteRangedSuite = 1
-	AutoCompletePlaceHolderSuite = 2
-	AutoCompleteNoSuite = 3
-
-class ResultCdDescOpt(Enum):
-	ResultCodeDescriptionLong = 0
-	ResultCodeDescriptionShort = 1
-
-class MailboxLookupMode(Enum):
-	MailboxNone = 0
-	MailboxExpress = 1
-	MailboxPremium = 2
 
 class mdParse(object):
 	def __init__(self):
@@ -1285,52 +1229,6 @@ class mdParse(object):
 	def ParseRule(self):
 		return lib.mdParseParseRule(self.I)
 
-# mdStreet Enumerations
-class ProgramStatus(Enum):
-	ErrorNone = 0
-	ErrorOther = 1
-	ErrorOutOfMemory = 2
-	ErrorRequiredFileNotFound = 3
-	ErrorFoundOldFile = 4
-	ErrorDatabaseExpired = 5
-	ErrorLicenseExpired = 6
-
-class AccessType(Enum):
-	Local = 0
-	Remote = 1
-
-class DiacriticsMode(Enum):
-	Auto = 0
-	On = 1
-	Off = 2
-
-class StandardizeMode(Enum):
-	ShortFormat = 0
-	LongFormat = 1
-	AutoFormat = 2
-
-class SuiteParseMode(Enum):
-	ParseSuite = 0
-	CombineSuite = 1
-
-class AliasPreserveMode(Enum):
-	ConvertAlias = 0
-	PreserveAlias = 1
-
-class AutoCompletionMode(Enum):
-	AutoCompleteSingleSuite = 0
-	AutoCompleteRangedSuite = 1
-	AutoCompletePlaceHolderSuite = 2
-	AutoCompleteNoSuite = 3
-
-class ResultCdDescOpt(Enum):
-	ResultCodeDescriptionLong = 0
-	ResultCodeDescriptionShort = 1
-
-class MailboxLookupMode(Enum):
-	MailboxNone = 0
-	MailboxExpress = 1
-	MailboxPremium = 2
 
 class mdStreet(object):
 	def __init__(self):
@@ -1450,52 +1348,6 @@ class mdStreet(object):
 	def GetPrimaryRangeLow(self):
 		return lib.mdStreetGetPrimaryRangeLow(self.I).decode('utf-8')
 
-# mdZip Enumerations
-class ProgramStatus(Enum):
-	ErrorNone = 0
-	ErrorOther = 1
-	ErrorOutOfMemory = 2
-	ErrorRequiredFileNotFound = 3
-	ErrorFoundOldFile = 4
-	ErrorDatabaseExpired = 5
-	ErrorLicenseExpired = 6
-
-class AccessType(Enum):
-	Local = 0
-	Remote = 1
-
-class DiacriticsMode(Enum):
-	Auto = 0
-	On = 1
-	Off = 2
-
-class StandardizeMode(Enum):
-	ShortFormat = 0
-	LongFormat = 1
-	AutoFormat = 2
-
-class SuiteParseMode(Enum):
-	ParseSuite = 0
-	CombineSuite = 1
-
-class AliasPreserveMode(Enum):
-	ConvertAlias = 0
-	PreserveAlias = 1
-
-class AutoCompletionMode(Enum):
-	AutoCompleteSingleSuite = 0
-	AutoCompleteRangedSuite = 1
-	AutoCompletePlaceHolderSuite = 2
-	AutoCompleteNoSuite = 3
-
-class ResultCdDescOpt(Enum):
-	ResultCodeDescriptionLong = 0
-	ResultCodeDescriptionShort = 1
-
-class MailboxLookupMode(Enum):
-	MailboxNone = 0
-	MailboxExpress = 1
-	MailboxPremium = 2
 
 class mdZip(object):
 	def __init__(self):
@@ -1541,10 +1393,10 @@ class mdZip(object):
 		return lib.mdZipFindCityInStateNext(self.I)
 
 	def ComputeDistance(self, p1, p2, p3, p4):
-		return lib.mdZipComputeDistance(self.I)
+		return lib.mdZipComputeDistance(self.I, p1, p2, p3, p4)
 
 	def ComputeBearing(self, p1, p2, p3, p4):
-		return lib.mdZipComputeBearing(self.I)
+		return lib.mdZipComputeBearing(self.I, p1, p2, p3, p4)
 
 	def GetCountyNameFromFips(self, p1):
 		return lib.mdZipGetCountyNameFromFips(self.I, (p1 or '').encode('utf-8')).decode('utf-8')
